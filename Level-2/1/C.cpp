@@ -29,6 +29,9 @@ int main() {
     solve(0);
 
     sort(luckyNums.begin(), luckyNums.end());
-    for (long long i = 0; i < luckyNums.size(); i++)
-        if (luckyNums[i] == n) cout << i+1 << '\n';
+    // for (long long i = 0; i < luckyNums.size(); i++)
+    //     if (luckyNums[i] == n) cout << i+1 << '\n';
+
+    long long i = std::lower_bound(luckyNums.begin(), luckyNums.end(), n) - luckyNums.begin();
+    cout << i+1 << '\n';
 }
